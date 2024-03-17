@@ -1,0 +1,77 @@
+:root {
+    --light-gray: #d3d3d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-button {
+    align-self: center;
+    font-family: 'Truculenta', serif;
+    font-weight: 900;
+    font-size: 28px;
+    width: 20vw;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+form {
+    display: none;
+}
+
+form.active {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+label {
+    font-family: 'Truculenta', serif;
+    font-size: 16px;
+    margin: 4px 0 4px 0;
+}
+
+input {
+    height: 2rem;
+}
+
+.display-books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Truculenta', serif;
+    font-size: 28px;
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--light-gray);
+    width: 20vh;
+    border-radius: 8px;
+}
+
+.book-card .bold {
+    font-weight: 900;
+}
+
+.delete-text {
+    color: red;
+    font-weight: 900;
+    cursor: pointer;
+}
