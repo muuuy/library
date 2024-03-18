@@ -1,5 +1,4 @@
 let myLibrary = [];
-let cardList = [];
 
 const btn = document.querySelector(".add-button");
 const bookForm = document.querySelector("form");
@@ -45,6 +44,8 @@ bookForm.addEventListener("submit", (e) => {
     addBookToLibrary(temp)
     createCard(temp)
 
+    console.table(myLibrary)
+
     bookForm.classList.remove("active");
 
     author.value = ''
@@ -63,7 +64,7 @@ const createCard = (book) => {
                                 <span class='bold'>PAGES:</span> ${book.pages}<br>
                                 <span class='bold'>READ:</span> ${book.checkRead()}<br>`;
     
-    newCard.setAttribute("data-id", myLibrary.length) //Associate card w/ index of book in library
+    newCard.setAttribute("data-id", myLibrary.length - 1) //Associate card w/ index of book in library
     newCard.classList.add("book-card")
     newCard.appendChild(newParagraph); 
     display.appendChild(newCard);
@@ -72,14 +73,14 @@ const createCard = (book) => {
     deleteText.classList.add("delete-text")
     deleteText.textContent = "Delete"
     newCard.appendChild(deleteText);
-
-    cardList.push(newCard)
-    console.log(cardList[0].textContent)
 }
 
 document.querySelector(".display-books").addEventListener("click", (e) => {
     target = e.target
     if(target.classList.contains("delete-text")) {
+        let j = target.parentElement.getAttribute("data-id");
+        myLibrary.splice(j, 1);
+        console.table(myLibrary)
         target.parentElement.remove()
     }
 })
