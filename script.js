@@ -79,7 +79,7 @@ document.querySelector(".display-books").addEventListener("click", (e) => {
     target = e.target
     if(target.classList.contains("delete-text")) {
         let j = target.parentElement.getAttribute("data-id");
-        myLibrary.splice(j, 1);
+        myLibrary[j] = null;
         console.table(myLibrary)
         target.parentElement.remove()
     }
